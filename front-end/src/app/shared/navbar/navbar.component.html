@@ -12,7 +12,14 @@
         </a>
         <div ngbDropdownMenu>
           <a class="dropdown-header">Dropdown header</a>
-          <a class="dropdown-item" href="#">Action</a>
+
+          <a
+            class="dropdown-item"
+            *ngIf="userService.loggedIn()"
+            type="button"
+            (click)="btClick()"
+            >Profile</a
+          >
           <a class="dropdown-item" href="#">Another action</a>
           <a class="dropdown-item" href="#">Something else here</a>
           <div class="dropdown-divider"></div>
@@ -77,7 +84,7 @@
             <p type="button" (click)="btnClick();">Sign Up</p>
           </a>
         </li> -->
-        <li class="nav-item" *ngIf="!loggedIn">
+        <li class="nav-item" *ngIf="!userService.loggedIn()">
           <button
             class="btn btn-primary btn-round"
             type="button"

@@ -79,9 +79,7 @@ export class SignupComponent implements OnInit {
       }
     });
     }
-    
-    
-  }
+}
   // onClick() {
   // if(this.type === "company") {
 

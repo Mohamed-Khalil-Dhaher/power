@@ -59,6 +59,10 @@ export class UserService {
     return this.http.get(this.rootUrl + "/profile", { headers: headers });
   }
 
+  getUser() {
+    this.http.get(this.rootUrl + "/user", this.httpOptions);
+  }
+
   storeUserData(token: string) {
     localStorage.setItem("id_token", token);
     // localStorage.setItem("user", JSON.stringify(user));

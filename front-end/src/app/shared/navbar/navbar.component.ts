@@ -23,9 +23,7 @@ export class NavbarComponent implements OnInit {
     private element: ElementRef,
     private router: Router,
     private toastr: ToastrService
-  ) {
-    
-  }
+  ) {}
 
   btnClick = function () {
     this.router.navigateByUrl("/signup");
@@ -33,11 +31,14 @@ export class NavbarComponent implements OnInit {
   bClick = function () {
     this.router.navigateByUrl("/examples/login");
   };
+  btClick = function () {
+    this.router.navigateByUrl("/examples/profile");
+  };
   ngOnInit() {
     const navbar: HTMLElement = this.element.nativeElement;
     this.toggleButton = navbar.getElementsByClassName("navbar-toggler")[0];
-      this.sidebarVisible = false;
-      if(this.userService.loggedIn()) this.loggedIn = true;
+    this.sidebarVisible = false;
+    if (this.userService.loggedIn()) this.loggedIn = true;
   }
   sidebarOpen() {
     const toggleButton = this.toggleButton;
@@ -81,5 +82,10 @@ export class NavbarComponent implements OnInit {
     });
     this.userService.Logout();
     this.router.navigate(["/examples/login"]);
+  }
+
+  getUserProfile() {
+    this.userService.getUser();
+    console.log(this.userService.getUser());
   }
 }
