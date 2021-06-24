@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations"; // this is needed!
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule , ReactiveFormsModule } from "@angular/forms";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app.routing";
@@ -17,8 +17,11 @@ import { AuthGuard } from "./auth.guard";
 import { JwtModule } from "@auth0/angular-jwt";
 import { ValidateService } from './services/validate.service';
 import { SearchComponent } from './search/search.component';
+import { ListCarComponent } from './list-car/list-car.component';
+import { CarDetailComponent } from './car-detail/car-detail.component';
+import { ReservationComponent } from './reservation/reservation.component';
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, SignupComponent, SearchComponent],
+  declarations: [AppComponent, NavbarComponent, SignupComponent, SearchComponent, ListCarComponent, CarDetailComponent, ReservationComponent],
   imports: [
     BrowserAnimationsModule,
     HttpClientModule,
@@ -28,6 +31,8 @@ import { SearchComponent } from './search/search.component';
     AppRoutingModule,
     ComponentsModule,
     ExamplesModule,
+    ReactiveFormsModule,
+
     MDBBootstrapModule.forRoot(),
     JwtModule.forRoot({
       config: {

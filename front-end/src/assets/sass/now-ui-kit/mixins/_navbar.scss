@@ -82,9 +82,9 @@
             }
         }
 
-        &.bg-white:not(.navbar-transparent) .navbar-toggler-bar{
-            background: $default-color;
-        }
+        // &.bg-white:not(.navbar-transparent) .navbar-toggler-bar{
+        //     background: $default-color;
+        // }
 
         & .toggled .navbar-toggler-bar{
             width: 24px;

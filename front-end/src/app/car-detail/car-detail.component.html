@@ -1,0 +1,102 @@
+
+<div *ngIf='car ' class="section" id="carousel">
+    <div class="container">
+      <div class="title">
+        <h4>{{car.brand}}</h4>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <ngb-carousel>
+            <ng-template ngbSlide>
+              <img
+                class="d-block"
+                src={{car.file1}}
+                alt="First slide"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>inside</h5>
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <img
+                class="d-block"
+                src={{car.file2}}
+                alt="Second slide"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>left side</h5>
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <img
+                class="d-block"
+                src={{car.file3}}
+                alt="Third slide"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>right side</h5>
+              </div>
+            </ng-template>
+          </ngb-carousel> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf='car' class="section section-nucleo-icons">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+          <h2 class="title">{{car.brand}}</h2>
+          <h5 class="description">
+           seats : {{car.seats}}
+         
+          </h5> 
+          <h5 class="description">
+            doors : {{car.doors}}
+           </h5> 
+          <h5 class="description">
+            suitcases : {{car.suitcases}}
+           </h5> 
+          <h5 class="description">
+            transmission : {{car.transmission}}
+           </h5> 
+          <h5 class="description">
+            aircond : {{car.airconditioner}}
+           </h5> 
+        <div class="nucleo-container"> 
+                <img src="assets/img/nucleo.svg" alt="">
+                <!-- <a
+                class="btn btn-primary btn-round btn-lg"
+                >Reserve now</a
+              >
+              <a
+                href="https://nucleoapp.com/?ref=1712"
+                class="btn btn-primary btn-simple btn-round btn-lg"
+                target="_blank"
+                >View All Icons</a
+              > -->
+    </div> 
+         
+        </div>
+        <div class="col-lg-6 col-md-12">
+          <div class="icons-container">
+            <i class="now-ui-icons ui-1_send"></i>
+            <i class="now-ui-icons ui-2_like"></i>
+            <i class="now-ui-icons transportation_air-baloon"></i>
+            <i class="now-ui-icons text_bold"></i>
+            <i class="now-ui-icons tech_headphones"></i>
+            <i class="now-ui-icons emoticons_satisfied"></i>
+            <i class="now-ui-icons shopping_cart-simple"></i>
+            <i class="now-ui-icons objects_spaceship"></i>
+            <i class="now-ui-icons media-2_note-03"></i>
+            <i class="now-ui-icons ui-2_favourite-28"></i>
+            <i class="now-ui-icons design_palette"></i>
+            <i class="now-ui-icons clothes_tie-bow"></i>
+            <i class="now-ui-icons location_pin"></i>
+            <i class="now-ui-icons objects_key-25"></i>
+            <i class="now-ui-icons travel_istanbul"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

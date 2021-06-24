@@ -31,7 +31,7 @@
     </div>
     <div class="navbar-translate">
       <!-- ngbTooltip="Designed by Invision. Coded by Creative Tim" -->
-      <a class="navbar-brand" [routerLink]="['/index']" placement="bottom">
+      <a class="navbar-brand" routerLink="/index" placement="bottom">
         Billio Rich
       </a>
       <button
@@ -52,7 +52,7 @@
     <div
       class="collapse navbar-collapse"
       data-nav-image="assets/img/blurred-image-1.jpg"
-      data-color="orange"
+      data-color="red"
     >
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
@@ -67,7 +67,7 @@
             <p>Contact A Live Superior</p>
           </a>
         </li> -->
-        <li class="nav-item" *ngIf="!userService.loggedIn()">
+        <li  class="nav-item" *ngIf="!userService.loggedIn()">
           <button
             class="btn btn-primary btn-round"
             type="button"
@@ -90,7 +90,7 @@
             type="button"
             (click)="btnClick()"
           >
-            <i class="now-ui-icons ui-2_favourite-28"></i> Sign Up
+            <i class="now-ui-icons ui-2_favourite-28"></i>Sign Up
           </button>
         </li>
         <li class="nav-item" *ngIf="userService.loggedIn()">
