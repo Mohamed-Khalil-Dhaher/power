@@ -1,1428 +1,189 @@
-.myCard {
-    margin: 20px;
-    width: 500px !important;
-    background-color: rgba(8, 4, 29, 0.801);
-    margin-top: 100px;
-    margin-bottom: 100px;
-  }
-  
-  .mycontainer {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background-color: rgb(255, 255, 255);
-  }
-  .mycontainer > div {
-    min-width: 20vw !important;
-  }
-  
-  .card-title {
-    color: cornsilk;
-  }
-  .card-text {
-    color: cornsilk;
-  }
-  
-  #sx-fleetlist-wrapper-all {
-    position: relative;
-    width: 60%;
-      margin: 100px auto 0;
-  }
-  #sx-fleetlist-wrapper-all:after {
-    content: ".";
-    clear: both;
-    display: block;
-    height: 0;
-    visibility: hidden;
-  }
-  .t3-page-wrapper.t3-static-bg {
-    background: #fff !important;
-  }
-  .t3-content-division-inner {
-    max-width: 1020px !important;
-  }
-  .t3-booking-content {
-    padding: 0 0 3%;
-  }
-  #fleet_form {
-    display: -ms-flexbox;
-    height: auto;
-    display: flex;
-    padding: 20px 10px 10px;
-    width: inherit;
-  }
-  @media (max-width: 799px) {
-    #fleet_form {
-      display: grid;
-    }
-  }
-  @media (min-width: 1060px) {
-    #fleet_form {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-  .sx-fleet-hd {
-    padding: 0;
-    margin-bottom: 5px;
-    max-width: 450px;
-    width: 45%;
-  }
-  @media (max-width: 499px) {
-    .sx-fleet-hd {
-      width: 100%;
-      float: none;
-    }
-  }
-  .sx-fleet-filter-country-ctyp {
-    display: -ms-flexbox;
-    -ms-flex-item-align: center;
-    align-self: center;
-    display: flex;
-    -ms-flex: 1;
-    flex: 1;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
-  }
-  .sx-fleet-filter-country-ctyp:after {
-    content: ".";
-    clear: both;
-    display: block;
-    height: 0;
-    visibility: hidden;
-  }
-  .sx-fleet-filter-country-ctyp .sx-fleet-filter-ctyp {
-    display: -ms-flexbox;
-    display: flex;
-    white-space: nowrap;
-    padding-top: 10px;
-    margin-right: 50px;
-  }
-  .sx-fleet-filter-country-ctyp .sx-fleet-filter-ctyp li {
-    padding: 0 15px 0 0;
-  }
-  .sx-fleet-filter-country-ctyp .sx-fleet-filter-ctyp .sx-fake-radio label {
-    font-family: Roboto;
-    font-size: 16px;
-  }
-  @media (max-width: 799px) {
-    .sx-fleet-filter-country-ctyp .sx-fleet-filter-ctyp {
-      padding: 10px 0;
-    }
-  }
-  .sx-fleet-filter-country-ctyp .sx-fleet-filter-country {
-    white-space: nowrap;
-    text-align: right;
-  }
-  .sx-fleet-filter-country-ctyp .sx-fleet-filter-country select {
-    width: auto;
-    max-width: 235px;
-    height: 40px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    background: #fff;
-    font-size: 16px;
-    line-height: 0.81;
-    color: #333;
-    min-width: 0;
-  }
-  @media (max-width: 799px) {
-    .sx-fleet-filter-country-ctyp .sx-fleet-filter-country select {
-      min-width: 100%;
-    }
-  }
-  .sx-fleet-filter-country-ctyp
-    .sx-fleet-filter-country
-    .sx-fleet-filter-country__title {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #333;
-    font-family: Roboto;
-  }
-  @media (max-width: 799px) {
-    .sx-fleet-filter-country-ctyp .sx-fleet-filter-country {
-      text-align: left;
-    }
-  }
-  @media (max-width: 499px) {
-    .sx-fleet-filter-country-ctyp .sx-fleet-filter-country {
-      display: grid;
-    }
-  }
-  @media (max-width: 799px) {
-    .sx-fleet-filter-country-ctyp {
-      -ms-flex-pack: start;
-      justify-content: flex-start;
-      display: block;
-      margin-right: 0;
-    }
-  }
-  .sx-fleet-switcher-ctyp {
-    display: -ms-flexbox;
-    display: flex;
-    white-space: nowrap;
-    padding-top: 12px;
-    margin-right: 50px;
-  }
-  @media (max-width: 799px) {
-    .sx-fleet-switcher-ctyp {
-      margin-bottom: 15px;
-    }
-  }
-  .sx-fleet-switcher-ctyp__radio {
-    cursor: pointer;
-    outline: none;
-    position: relative;
-    padding: 1px 0 0 30px;
-    margin-right: 15px;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #333;
-    font-family: Roboto;
-    font-size: 16px;
-  }
-  .sx-fleet-switcher-ctyp__radio:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    border: 1px solid #ccc;
-    background: #ff7d19;
-    box-shadow: inset 0 0 0 11px #fff;
-  }
-  .sx-fleet-switcher-ctyp__radio:hover:before,
-  .sx-fleet-switcher-ctyp__radio_active:before {
-    box-shadow: inset 0 0 0 4px #fff;
-    border-color: #ff7d19;
-  }
-  .sx-fleet-filter-result-wrapper {
-    clear: both;
-    padding: 20px 10px;
-  }
-  @media (min-width: 1060px) {
-    .sx-fleet-filter-result-wrapper {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-  .sx-fleet-filter-result {
-    padding: 0 0 6px;
-    font-family: Roboto;
-    font-size: 32px;
-    font-weight: lighter;
-    line-height: 0.75;
-  }
-  @media (max-width: 499px) {
-    .sx-fleet-filter-result {
-      font-size: 25px;
-      font-weight: lighter;
-      font-stretch: condensed;
-      line-height: 0.96;
-      text-align: left;
-      color: #333;
-    }
-  }
-  .sx-fleet-filter-result #sx-fleet-filter-result-none {
-    display: none;
-  }
-  .sx-fleet-filter-result.lkw-result {
-    padding: 20px 10px;
-  }
-  @media (min-width: 1060px) {
-    .sx-fleet-filter-result.lkw-result {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-  .fleet__filter__button-icon {
-    display: none;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.5;
-    text-align: left;
-    color: #ff7d19;
-    padding-left: 26px;
-    background: url(/common/img/app/fleet/default/icon/fleet-filter/filter.svg)
-      no-repeat 0 50%;
-  }
-  @media (max-width: 499px) {
-    .fleet__filter__button-icon {
-      display: block;
-    }
-  }
-  #fleet__filter__button--nr {
-    border-radius: 50%;
-    background: #ff7d19;
-    height: 16px;
-    width: 16px;
-    margin: 0 0 2px 8px;
-    text-align: center;
-    vertical-align: middle;
-    font-size: 12px;
-    color: #fff;
-    display: inline-block;
-  }
-  .sx-fleet-filter-wrapper--desktop {
-    display: block;
-    padding: 0 0 20px 20px;
-  }
-  @media (max-width: 499px) {
-    .sx-fleet-filter-wrapper--desktop {
-      display: none;
-    }
-  }
-  .fleet__filter--desktop {
-    display: block;
-  }
-  @media (max-width: 499px) {
-    .fleet__filter--desktop {
-      display: none;
-    }
-  }
-  .sx-fleet-filter-wrapper--mobile {
-    display: none;
-  }
-  .sx-fleet-filter-options {
-    width: 23%;
-    float: left;
-  }
-  @media (max-width: 799px) {
-    .sx-fleet-filter-options {
-      width: 30%;
-    }
-  }
-  .sx-fleet-filter-checkbox {
-    margin: 19px 0;
-  }
-  .sx-fleet-filter-checkbox .sx-js-fleet-filter {
-    position: absolute;
-    opacity: 0;
-  }
-  .sx-fleet-filter-checkbox .sx-js-fleet-filter + label {
-    position: relative;
-    cursor: pointer;
-    padding: 0;
-    font-size: 16px;
-  }
-  .sx-fleet-filter-checkbox .sx-js-fleet-filter + label:before {
-    content: "";
-    margin-right: 10px;
-    display: inline-block;
-    vertical-align: text-top;
-    width: 20px;
-    height: 20px;
-    background: #fff;
-    outline: 1px solid #919191;
-    font-size: 16px;
-    line-height: 2.38;
-  }
-  .sx-fleet-filter-checkbox .sx-js-fleet-filter:checked + label:before {
-    background-color: #fff;
-    outline: none;
-    background: url(/common/img/app/typo3/typo3-corporate/default/icon/fake-checkbox-orange-on.png)
-      no-repeat;
-  }
-  .sx-fleet-filterlist-wrapper {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-    margin: 0 0 20px;
-    border: 1px solid #666;
-    position: relative;
-    z-index: 1000;
-  }
-  .sx-fleet-filterlist-wrapper .sx-fleet-filterlist {
-    display: table-row;
-  }
-  .sx-fleet-filterlist-wrapper .sx-fleet-filter-group {
-    display: table-cell;
-    border-left: 1px solid #ff7d19;
-    position: relative;
-    t-index: 1000;
-  }
-  @media (max-width: 799px) {
-    .sx-fleet-filterlist-wrapper .sx-fleet-filter-group {
-      position: static;
-    }
-  }
-  .sx-fleet-filterlist-wrapper .sx-fleet-filter-group.t3-selected {
-    background: #ff7d19;
-    color: #fff;
-  }
-  .sx-fleet-filterlist-wrapper .sx-fleet-filter-group:first-child {
-    border: none;
-  }
-  .sx-fleet-filterlist-wrapper .sx-fleet-filter-hd {
-    padding: 45px 0 10px;
-    background: transparent
-      url(/common/img/app/fleet/default/icon/fleet-filter/category_o.png)
-      no-repeat 50% 15px;
-    text-align: center;
-  }
-  @media (max-width: 499px) {
-    .sx-fleet-filterlist-wrapper .sx-fleet-filter-hd {
-      background-size: 90% auto;
-    }
-  }
-  .sx-fleet-filterlist-wrapper .sx-selected .sx-fleet-selected-filter {
-    color: #ff7d19;
-  }
-  @media (max-width: 499px) {
-    .sx-fleet-filterlist-wrapper .sx-selected .sx-fleet-selected-filter {
-      font-size: 11px;
-    }
-  }
-  .sx-fleet-filterlist-wrapper .t3-selected .sx-fleet-selected-filter {
-    color: #fff;
-  }
-  .sx-fleet-filterlist-wrapper .sx-js-fleet-group-category .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/category_o.png);
-  }
-  .sx-fleet-filterlist-wrapper .sx-js-fleet-group-model .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/model_o.png);
-  }
-  .sx-fleet-filterlist-wrapper .sx-js-fleet-group-capacity .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/capacity_o.png);
-  }
-  .sx-fleet-filterlist-wrapper .sx-js-fleet-group-equipment .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/equipment_o.png);
-  }
-  .sx-fleet-filterlist-wrapper .sx-js-fleet-group-lkwload .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/lkwload_o.png);
-  }
-  .sx-fleet-filterlist-wrapper .sx-js-fleet-group-licence .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/licence_o.png);
-  }
-  .sx-fleet-filterlist-wrapper
-    .sx-js-fleet-group-category.t3-selected
-    .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/category_w.png);
-  }
-  .sx-fleet-filterlist-wrapper
-    .sx-js-fleet-group-model.t3-selected
-    .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/model_w.png);
-  }
-  .sx-fleet-filterlist-wrapper
-    .sx-js-fleet-group-capacity.t3-selected
-    .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/capacity_w.png);
-  }
-  .sx-fleet-filterlist-wrapper
-    .sx-js-fleet-group-equipment.t3-selected
-    .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/equipment_w.png);
-  }
-  .sx-fleet-filterlist-wrapper
-    .sx-js-fleet-group-lkwload.t3-selected
-    .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/lkwload_w.png);
-  }
-  .sx-fleet-filterlist-wrapper
-    .sx-js-fleet-group-licence.t3-selected
-    .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/licence_w.png);
-  }
-  .sx-fleet-filterlist-wrapper .sx-filter-content {
-    position: absolute;
-    left: -1px;
-    top: 100%;
-    min-width: 94%;
-    padding: 6% 3% 10%;
-    background: #ff7d19;
-    text-align: left;
-    z-index: 1001;
-    border-left: 1px solid #ff7d19;
-    border-right: 1px solid #ff7d19;
-  }
-  .sx-fleet-filterlist-wrapper .sx-fake-checkbox label {
-    background-image: url(/common/img/app/typo3/typo3-corporate/default/bg/fake-checkbox-inv-off.png);
-  }
-  .sx-fleet-filterlist-wrapper .sx-fake-checkbox.sx-gc-selected label {
-    background-image: url(/common/img/app/typo3/typo3-corporate/default/bg/fake-checkbox-inv-on.png);
-  }
-  .sx-fleet-filterlist-wrapper select {
-    min-width: 100%;
-    padding: 2px;
-    background: #fff;
-    border: 1px solid #111119;
-    margin: 0 0 15px;
-    box-sizing: border-box;
-    font-size: 16px;
-  }
-  .sx-fleet-filterlist-wrapper .sx-lkwload-info {
-    padding: 0 0 10px;
-  }
-  .sx-fleet-filterlist-wrapper__categories {
-    width: 77%;
-    float: right;
-    margin-top: 19px;
-  }
-  .sx-fleet-filterlist-wrapper__categories .sx-fleet-filterlist {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .sx-fleet-filterlist-wrapper__categories .sx-fleet-filter-group {
-    width: 120px;
-    height: 92px;
-    border-radius: 3px;
-    margin: 0 5px 5px 0;
-    border: 1px solid transparent;
-  }
-  .sx-fleet-filterlist-wrapper__categories .sx-fleet-filter-group span {
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.5;
-    text-align: center;
-  }
-  .sx-fleet-filterlist-wrapper__categories .item-selected {
-    border: 1px solid #ff7d19;
-    color: #ff7d19;
-  }
-  @media (max-width: 799px) {
-    .sx-fleet-filterlist-wrapper__categories {
-      width: 70%;
-    }
-  }
-  .sx-fleet-filter-hd {
-    padding: 58px 0 10px;
-    background: transparent
-      url(/common/img/app/fleet/default/icon/fleet-filter/category_o.png)
-      no-repeat 50% 23px;
-    font-size: 16px;
-    text-align: center;
-    cursor: pointer;
-  }
-  @media (max-width: 499px) {
-    .sx-fleet-filter-hd {
-      background-size: 90% auto;
-    }
-  }
-  .sx-js-fleet-group-convertibles .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/pic-convertible.svg);
-  }
-  .sx-js-fleet-group-convertibles.item-selected .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/pic-convertible-selected.svg);
-  }
-  .sx-js-fleet-group-coup .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/pic-sports-car.svg);
-  }
-  .sx-js-fleet-group-coup.item-selected .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/pic-sports-car-selected.svg);
-  }
-  .sx-js-fleet-group-cars .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/pic-limousine.svg);
-  }
-  .sx-js-fleet-group-cars.item-selected .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/pic-limousine-selected.svg);
-  }
-  .sx-js-fleet-group-estates .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/pic-suv.svg);
-  }
-  .sx-js-fleet-group-estates.item-selected .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/pic-suv-selected.svg);
-  }
-  .sx-js-fleet-group-mpvs .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/pic-van.svg);
-  }
-  .sx-js-fleet-group-mpvs.item-selected .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/pic-van-selected.svg);
-  }
-  .sx-js-fleet-group-suv .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/pic-suv.svg);
-  }
-  .sx-js-fleet-group-suv.item-selected .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/pic-suv-selected.svg);
-  }
-  .sx-js-fleet-group-minibuses .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/pic-minibuses.svg);
-  }
-  .sx-js-fleet-group-minibuses.item-selected .sx-fleet-filter-hd {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/pic-minibuses-selected.svg);
-  }
-  #sx-fleetlist-wrapper-all {
-    position: relative;
-  }
-  #sx-fleetlist-wrapper-all:after {
-    content: ".";
-    clear: both;
-    display: block;
-    height: 0;
-    visibility: hidden;
-  }
-  .sx-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: #fff;
-    opacity: 0.5;
-    display: none;
-  }
-  .sx-car-fleetlist {
-    padding: 0 0 20px;
-  }
-  @media (max-width: 799px) {
-    .sx-car-fleetlist {
-      width: 100vw;
-    }
-  }
-  @media (max-width: 499px) {
-    .sx-car-fleetlist {
-      width: 100%;
-      margin-left: 0;
-    }
-  }
-  .sx-car-fleetlist li.sx-fleetlist-item {
-    background: #fff;
-    margin: 0 0 50px;
-    padding: 20px 30px;
-  }
-  @media (max-width: 799px) {
-    .sx-car-fleetlist li.sx-fleetlist-item {
-      border: none;
-      padding: 20px;
-      margin: 0 0 20px;
-    }
-  }
-  @media (max-width: 499px) {
-    .sx-car-fleetlist li.sx-fleetlist-item {
-      padding: 20px;
-    }
-  }
-  .sx-car-fleetlist li.sx-fleetlist-item .sx-fleetlist-call-text {
-    float: right;
-    font-size: 12px;
-  }
-  .sx-car-fleetlist .sx-fleetlist-table {
-    clear: both;
-    display: table;
-    width: 100%;
-  }
-  @media (max-width: 799px) {
-    .sx-car-fleetlist .sx-fleetlist-row,
-    .sx-car-fleetlist .sx-fleetlist-table {
-      display: block;
-    }
-  }
-  .sx-car-fleetlist .sx-fleetlist-container,
-  .sx-car-fleetlist .sx-fleetlist-container .sx-fleetlist-row {
-    width: auto;
-  }
-  .sx-car-fleetlist .sx-fleetlist-container .sx-fleetlist-row:after {
-    content: ".";
-    clear: both;
-    display: block;
-    height: 0;
-    visibility: hidden;
-  }
-  .sx-car-fleetlist .sx-fleetlist-container .sx-fleetlist-offerfeatures {
-    width: 100%;
-    float: left;
-  }
-  @media (max-width: 799px) {
-    .sx-car-fleetlist .sx-fleetlist-container .sx-fleetlist-offerfeatures {
-      float: none;
-    }
-  }
-  .sx-car-fleetlist
-    .sx-fleetlist-container
-    .sx-fleetlist-offerfeatures.offerfeatures-delorean {
-    width: 100%;
-  }
-  .sx-car-fleetlist
-    .sx-fleetlist-container
-    .sx-fleetlist-offerfeatures.offerfeatures-delorean
-    .sx-car-fleetlist
-    .sx-fleetlist-equipment
-    li {
-    max-width: 145px;
-  }
-  .sx-car-fleetlist .sx-fleetlist-container .wrap {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-  }
-  @media (max-width: 499px) {
-    .sx-car-fleetlist
-      .sx-fleetlist-lkw
-      .sx-fleetlist-container
-      .sx-fleetlist-offerfeatures {
-      margin-bottom: 15px;
-    }
-  }
-  .sx-car-fleetlist .sx-fleetlist-data {
-    display: table-cell;
-    width: 45%;
-    float: left;
-    position: relative;
-    padding: 10px 0;
-  }
-  .sx-car-fleetlist .sx-fleetlist-data:after {
-    content: ".";
-    clear: both;
-    display: block;
-    height: 0;
-    visibility: hidden;
-  }
-  @media (max-width: 799px) {
-    .sx-car-fleetlist .sx-fleetlist-data {
-      display: block;
-      width: 100%;
-      padding: 0;
-      background: none;
-    }
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerinfo {
-    float: left;
-    width: 100%;
-  }
-  @media (max-width: 799px) {
-    .sx-car-fleetlist .sx-fleetlist-offerinfo {
-      float: none;
-      width: auto;
-    }
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerinfo h3 {
-    color: #000;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding: 0;
-    text-align: left;
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerinfo .offerinfo_type {
-    font-size: 12px;
-    font-stretch: condensed;
-    text-align: center;
-    vertical-align: top;
-    color: #666;
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerinfo .offerinfo-lkw-list {
-    font-size: 16px;
-    font-family: Roboto;
-    margin-bottom: 30px;
-  }
-  .sx-car-fleetlist .offerinfo-list {
-    width: 70%;
-    font-size: 14px;
-    text-align: left;
-    margin-bottom: 20px;
-  }
-  @media (max-width: 799px) {
-    .sx-car-fleetlist .offerinfo-list {
-      width: 94%;
-      padding-left: 0;
-    }
-  }
-  .sx-car-fleetlist .offerinfo-list .offerinfo-list-groups {
-    white-space: nowrap;
-  }
-  .sx-car-fleetlist .offerinfo-list_item {
-    font-size: 16px;
-    padding-top: 25px;
-  }
-  @media (max-width: 499px) {
-    .sx-car-fleetlist .offerinfo-list_item {
-      font-size: 14px;
-      text-align: left;
-    }
-  }
-  #tit{
-    margin-bottom: 50px;
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerinfo .sx-fleetlist-img {
-    display: none;
-  }
-  @media (max-width: 799px) {
-    .sx-car-fleetlist .sx-fleetlist-offerinfo .sx-fleetlist-img {
-      display: block;
-      float: none;
-    }
-  }
-  #button{
-    background-color: rgb(99, 62, 136);
-    margin-left: 15px;
-  }
-  .sx-car-fleetlist .sx-fleetlist-img {
-    display: table-cell;
-    width: 55%;
-    float: right;
-    text-align: center;
-  }
-  .sx-car-fleetlist .sx-fleetlist-img img {
-    max-width: 550px;
-    max-height: 550px;
-    width: 100%;
-    height: auto;
-    padding: 20px 0;
-  }
-  @media (max-width: 799px) {
-    .sx-car-fleetlist .sx-fleetlist-img {
-      display: none;
-      width: 100%;
-      background: none;
-    }
-    .sx-car-fleetlist .sx-fleetlist-img img {
-      max-width: 100%;
-      max-height: auto;
-      width: auto;
-      height: auto;
-    }
-  }
-  @media (max-width: 499px) {
-    .sx-car-fleetlist .sx-fleetlist-img img {
-      max-width: 95%;
-    }
-  }
-  .sx-car-fleetlist hr {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    width: 100%;
-  }
-  .sx-car-fleetlist .sx-fleetlist-row .sx-equipment-info {
-    color: #000;
-    font-size: 16px;
-    font-weight: 700;
-    text-align: left;
-    line-height: 3;
-    cursor: pointer;
-  }
-  .sx-car-fleetlist .sx-fleetlist-row-bottom {
-    padding: 16px 0 15px;
-  }
-  @media (max-width: 499px) {
-    .sx-car-fleetlist .sx-fleetlist-row-bottom {
-      padding-bottom: 0;
-    }
-  }
-  .sx-car-fleetlist .sx-fleetlist-equipment {
-    list-style: none;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .sx-car-fleetlist .sx-fleetlist-equipment li {
-    font-size: 14px;
-    text-align: left;
-    color: #666;
-    width: 50%;
-    box-sizing: border-box;
-  }
-  .sx-car-fleetlist .offerfeatures-delorean .sx-fleetlist-equipment li {
-    max-width: 145px;
-  }
-  @media (max-width: 499px) {
-    .sx-car-fleetlist .offerfeatures-delorean .sx-fleetlist-equipment li {
-      width: 45%;
-    }
-  }
-  .sx-car-fleetlist
-    .offerfeatures-delorean
-    .sx-fleetlist-equipment
-    li.sx-delor-equipment-time
-    strong {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/delorean-icons/clock.svg);
-  }
-  .sx-car-fleetlist
-    .offerfeatures-delorean
-    .sx-fleetlist-equipment
-    li.sx-delor-equipment-capacity
-    strong {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/delorean-icons/flux_capacitor.svg);
-  }
-  .sx-car-fleetlist
-    .offerfeatures-delorean
-    .sx-fleetlist-equipment
-    li.sx-delor-equipment-hover
-    strong {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/delorean-icons/hoverboard.svg);
-  }
-  .sx-car-fleetlist
-    .offerfeatures-delorean
-    .sx-fleetlist-equipment
-    li.sx-delor-equipment-doors
-    strong {
-    background-image: url(/common/img/app/fleet/default/icon/fleet-filter/delorean-icons/gull-wing-doors.svg);
-  }
-  .sx-car-fleetlist
-    .offerfeatures-delorean
-    .sx-fleetlist-equipment
-    li.sx-equipment-seats
-    strong {
-    background-image: url(/common/img/app/reservation/default/icon/icons-equipment.png);
-  }
-  .sx-car-fleetlist .sx-fleetlist-equipment.lkw-equipment li {
-    width: 100%;
-  }
-  .sx-car-fleetlist .sx-fleetlist-equipment.lkw-equipment li span {
-    background: inherit;
-    height: inherit;
-    overflow: inherit;
-    padding: inherit;
-    vertical-align: top;
-    width: 50%;
-  }
-  @media (max-width: 799px) {
-    .sx-car-fleetlist .sx-fleetlist-equipment.lkw-equipment li {
-      width: 80%;
-    }
-  }
-  .sx-car-fleetlist
-    .sx-fleetlist-equipment.lkw-equipment
-    li.sx-res-minage-info
-    strong {
-    margin-bottom: 2px;
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerfeatures li sup {
-    vertical-align: top;
-  }
-  .sx-car-fleetlist .sx-fleetlist-equipment li span {
-    height: 14.1px;
-    padding-right: 8px;
-  }
-  .sx-car-fleetlist .sx-fleetlist-equipment li span,
-  .sx-car-fleetlist .sx-fleetlist-equipment li strong {
-    background: transparent
-      url(/common/img/app/reservation/default/icon/icons-equipment.png) no-repeat
-      0 50%;
-    overflow: hidden;
-    display: inline-block;
-    width: 13.7px;
-    margin: 0 0 6px;
-    vertical-align: middle;
-  }
-  .sx-car-fleetlist .sx-fleetlist-equipment li strong {
-    height: 20px;
-    padding-right: 15px;
-  }
-  @media (max-width: 499px) {
-    .sx-car-fleetlist .sx-fleetlist-equipment li strong {
-      margin-right: 2px;
-      padding-right: 10px;
-    }
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerfeatures li.sx-equipment-info a {
-    color: #666;
-    font-weight: 400;
-    text-decoration: none;
-    cursor: pointer;
-    display: inline-block;
-    vertical-align: none;
-    width: 200px;
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerfeatures li.sx-equipment-info a span {
-    background: url(/common/img/app/typo3/typo3-corporate/default/buttons/info_icon.svg)
-      no-repeat 0 50%;
-    background-size: 19px;
-    height: 22px;
-    width: 23px;
-    margin-bottom: 4px;
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerfeatures li strong span {
-    display: none;
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerfeatures li.sx-equipment-ac strong {
-    background-position: 1px 50%;
-  }
-  .sx-car-fleetlist
-    .sx-fleetlist-offerfeatures
-    li.sx-equipment-transmission
-    strong {
-    background-position: -50px 50%;
-  }
-  .sx-car-fleetlist
-    .sx-fleetlist-offerfeatures
-    li.sx-equipment-nav_guaranteed
-    strong {
-    background-position: -99px 50%;
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerfeatures li.sx-equipment-seats strong {
-    background-position: -149px 50%;
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerfeatures li.sx-equipment-doors-2 strong {
-    background-position: -200px 50%;
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerfeatures li.sx-equipment-doors-4 strong {
-    background-position: -249px 50%;
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerfeatures li.sx-equipment-case_big strong {
-    background-position: -299px 50%;
-  }
-  .sx-car-fleetlist
-    .sx-fleetlist-offerfeatures
-    li.sx-equipment-case_small
-    strong {
-    background-position: -348px 50%;
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerfeatures li.sx-equipment-cbm strong {
-    background-position: -450px 50%;
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerfeatures li.sx-equipment-load strong {
-    background-position: -550px 50%;
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerfeatures li.sx-equipment-lr strong {
-    background-position: -650px 50%;
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerfeatures li.sx-res-minage-info strong {
-    background: transparent
-      url(/common/img/app/reservation/default/icon/icon-minage.png) no-repeat 0
-      50%;
-  }
-  .sx-car-fleetlist .sx-fleetlist-button {
-    width: 25%;
-    display: -ms-flexbox;
-    display: flex;
-    float: right;
-  }
-  .sx-car-fleetlist .sx-fleetlist-button .sx-gc-button-cta {
-    display: inline;
-    max-width: 218px;
-    font-size: 16px;
-    border: none;
-    float: none;
-    margin-right: 22px;
-    padding: 15px 0 !important;
-  }
-  .sx-car-fleetlist .sx-fleetlist-button .sx-gc-button-cta span {
-    background: #ff7d19
-      url(/common/img/app/reservation/default/ibe-horizontal/icons/button_arrow@3x.svg)
-      no-repeat 50% 50%;
-  }
-  @media (max-width: 799px) {
-    .sx-car-fleetlist .sx-fleetlist-button .sx-gc-button-cta {
-      margin: 0 auto;
-    }
-  }
-  @media (max-width: 499px) {
-    .sx-car-fleetlist .sx-fleetlist-button .sx-gc-button-cta {
-      max-width: 100%;
-    }
-  }
-  @media (max-width: 799px) {
-    .sx-car-fleetlist .sx-fleetlist-button {
-      width: 100%;
-    }
-  }
-  .sx-car-fleetlist .sx-fleetlist-button {
-    right: 0;
-    left: auto;
-  }
-  @media (max-width: 799px) {
-    .sx-car-fleetlist .sx-fleetlist-button {
-      padding: 0 0 3%;
-    }
-  }
-  @media (max-width: 799px) {
-    .sx-car-fleetlist .sx-fleetlist-lkw .sx-fleetlist-button {
-      width: 50%;
-    }
-  }
-  @media (max-width: 499px) {
-    .sx-car-fleetlist .sx-fleetlist-lkw .sx-fleetlist-button {
-      margin-top: 15px;
-      width: 100%;
-    }
-  }
-  .sx-car-fleetlist .sx-fleetlist-col .sx-gc-button-cta {
-    border: none;
-    border-left: 16px solid #fff;
-    min-height: 56px;
-    padding-top: 16px !important;
-    border-radius: 0;
-  }
-  @media (max-width: 799px) {
-    .sx-car-fleetlist .sx-fleetlist-col .sx-gc-button-cta {
-      border: none;
-      width: 90%;
-      min-height: auto;
-      padding-top: 13px;
-      margin: 0 auto 20px;
-    }
-  }
-  .sx-car-fleetlist .clear {
-    clear: both;
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerfeatures {
-    float: right;
-    width: 45%;
-  }
-  @media (max-width: 799px) {
-    .sx-car-fleetlist .sx-fleetlist-offerfeatures {
-      float: none;
-      width: auto;
-      text-align: center;
-      padding: 3% 0;
-    }
-  }
-  @media (max-width: 499px) {
-    .sx-car-fleetlist .sx-fleetlist-offerfeatures {
-      float: none;
-      width: 100%;
-      text-align: center;
-      padding: 3% 0;
-    }
-  }
-  .sx-car-fleetlist .sx-fleetlist-col {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 50%;
-  }
-  @media (max-width: 799px) {
-    .sx-car-fleetlist .sx-fleetlist-col {
-      position: static;
-      display: block;
-      width: 100%;
-      padding: 3% 0;
-    }
-  }
-  .sx-car-fleetlist .sx-fleetlist-col .sx-gc-button-cta:before {
-    height: 54px;
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerprice {
-    display: table;
-    width: 95%;
-    color: #333;
-  }
-  @media (max-width: 799px) {
-    .sx-car-fleetlist .sx-fleetlist-offerprice {
-      width: 60%;
-      margin: auto;
-    }
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerprice-row {
-    display: table-row;
-  }
-  @media (max-width: 499px) {
-    .sx-car-fleetlist .sx-fleetlist-offerprice-row {
-      display: block;
-    }
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerprice-cell {
-    display: table-cell;
-    height: 56px;
-    vertical-align: middle;
-    line-height: 160%;
-  }
-  @media (max-width: 499px) {
-    .sx-car-fleetlist .sx-fleetlist-offerprice-cell {
-      display: block;
-      height: auto;
-    }
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerprice-cell span {
-    font-size: 14px;
-    width: 55%;
-    vertical-align: middle;
-    font-weight: lighter;
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerprice-cell strong {
-    margin: 0 0 0 -4px;
-    width: 45%;
-    font-size: 24px;
-    vertical-align: middle;
-    text-align: right;
-    font-weight: 400;
-    white-space: nowrap;
-  }
-  @media (max-width: 799px) {
-    .sx-car-fleetlist .sx-fleetlist-offerprice-cell strong {
-      font-size: 32px;
-    }
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerprice-cell strong small {
-    font-size: 14px;
-  }
-  .sx-car-fleetlist .sx-fleetlist-offerprice-cell span,
-  .sx-car-fleetlist .sx-fleetlist-offerprice-cell strong {
-    display: inline-block;
-    vertical-align: middle;
-    overflow: hidden;
-    height: auto;
-    padding: 0;
-  }
-  @media (max-width: 799px) {
-    .sx-car-fleetlist .sx-fleetlist-offerprice-cell span,
-    .sx-car-fleetlist .sx-fleetlist-offerprice-cell strong {
-      width: auto;
-      display: block;
-      text-align: center;
-      margin: 0;
-      padding: 1% 0;
-    }
-  }
-  .sx-car-fleetlist
-    .sx-fleetlist-offerprice-cell
-    span.sx-fleetlist-offerprice-fullsize {
-    width: 90%;
-    white-space: normal;
-  }
-  .sx-car-fleetlist .sx-fleetlist-call-wrapper {
-    display: table;
-    width: 100%;
-    height: 56px;
-    box-sizing: border-box;
-  }
-  .sx-car-fleetlist .sx-fleetlist-call-wrapper div {
-    display: table-row;
-    width: 100%;
-  }
-  .sx-car-fleetlist .sx-fleetlist-call-wrapper p {
-    display: table-cell;
-    color: #ff7d19;
-    font-size: 20px;
-    text-align: center;
-    vertical-align: middle;
-    border-left: 16px solid #fff;
-  }
-  .sx-car-fleetlist .sx-fleetlist-call-wrapper p span {
-    display: block;
-    font-size: 12px;
-  }
-  .fleet__filter__modal {
-    display: none;
-    position: fixed;
-    z-index: 20000;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    height: 100%;
-    overflow-y: scroll;
-    background-color: #fefefe;
-  }
-  .fleet__filter__modal .fleet__filter__modal--wrapper {
-    padding: 40px 30px;
-  }
-  .fleet__filter__modal .fleet__filter__header {
-    font-size: 32px;
-    font-weight: lighter;
-    font-stretch: condensed;
-    line-height: 0.75;
-    text-align: left;
-    color: #333;
-  }
-  .fleet__filter__modal .fleet__filter__header__close {
-    background: transparent
-      url(/common/img/app/reservation/default/icon/icon-close.png) no-repeat 100%
-      100%;
-    padding: 10px;
-  }
-  .fleet__filter__modal
-    .fleet__filter__group__wrapper
-    .sx-fleet-filter-options--mobile {
-    width: 100%;
-  }
-  .fleet__filter__modal hr {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  .fleet__filter__modal #sx-js-fleet-filterlist {
-    padding-top: 30px;
-    padding-bottom: 25px;
-  }
-  .fleet__filter__modal .sx-fleet-filterlist-wrapper__categories {
-    width: 100%;
-  }
-  .fleet__filter__modal
-    .sx-fleet-filterlist-wrapper__categories
-    .sx-fleet-filter-group {
-    width: 97px;
-    height: 80px;
-    margin-right: 6px;
-  }
-  .fleet__filter__modal
-    .sx-fleet-filterlist-wrapper__categories
-    .sx-fleet-filter-group
-    span {
-    font-size: 14px;
-  }
-  .fleet__filter__modal
-    .sx-fleet-filterlist-wrapper__categories
-    .sx-fleet-filter-hd {
-    background-size: 70% auto;
-  }
-  .sx-fleet-home-heading {
-    background: #ff7d19;
-    text-align: center;
-    padding: 10px;
-    font-weight: 700;
-    font-family: Roboto, Arial, Verdana, Liberation Sans, Bitstream Vera,
-      sans-serif;
-    font-size: 36px;
-    color: #fff;
-  }
-  .sx-fleet-lkw-dis,
-  .sx-fleet-lkw-wrapper {
-    padding: 0 0 20px;
-  }
-  .sx-fleet-lkw-wrapper table {
-    width: 100%;
-    border: none;
-    border-collapse: collapse;
-  }
-  .sx-fleet-lkw-wrapper th {
-    padding: 6px 3px;
-    background: #ff7d19;
-    color: #fff;
-    vertical-align: top;
-  }
-  .sx-fleet-lkw-wrapper td {
-    padding: 6px 3px;
-    border-bottom: 1px solid #666;
-    vertical-align: top;
-  }
-  .sx-fleet-lkw-wrapper .sx-fleet-lkwdetail-description {
-    font-size: 12px;
-    color: #666;
-    border: none;
-    padding: 0 3px 20px;
-  }
-  .sx-fleet-lkw-wrapper .sx-fleet-lkwdetail-item {
-    font-weight: 700;
-    width: 40%;
-  }
-  @media (max-width: 799px) {
-    .sx-fleet-lkw-wrapper .sx-fleet-lkwdetail-item {
-      width: auto;
-    }
-  }
-  .sx-fleet-lkw-wrapper .sx-fleet-lkwdetail-ff td {
-    border: none;
-    padding-bottom: 0;
-  }
-  .ie7 .sx-fleet-filterlist-wrapper {
-    display: block;
-  }
-  .ie7 .sx-fleet-filterlist-wrapper .sx-fleet-filterlist {
-    display: block;
-    min-height: 1px;
-    height: 100%;
-  }
-  .ie7 .sx-fleet-filterlist-wrapper .sx-fleet-filter-group {
-    display: block;
-    float: left;
-    /* min-height: expression(this.parentElement.offsetHeight + "px"); */
-    width: 25%;
-  }
-  .ie7 .sx-fleet-filterlist-wrapper .sx-fleet-filter-group:first-child {
-    border: none;
-    margin: 0 0 0 -3px;
-  }
-  .ie7 .sx-fleet-filter-country-ctyp {
-    min-height: 1px;
-  }
-  .ie7 .sx-fleet-filter-country-ctyp .sx-fleet-filter-country {
-    width: 70%;
-  }
-  .ie7 .sx-fleet-filter-country-ctyp .sx-fleet-filter-ctyp {
-    width: 29%;
-  }
-  .ie7 .sx-fleet-filter-country-ctyp .sx-fleet-filter-ctyp li {
-    display: inline;
-  }
-  .ie7 .sx-fleet-filter-country-ctyp select {
-    width: auto;
-    min-width: none;
-  }
-  .ie8 .sx-car-fleetlist .sx-gc-button-cta {
-    padding: 16px 0 0 !important;
-    min-height: 40px;
-  }
-  .ie7 .sx-car-fleetlist .sx-fleetlist-item {
-    overflow: hidden;
-    border: 1px solid #666;
-    padding: 2px;
-    box-shadow: none;
-  }
-  .ie7 .sx-car-fleetlist .sx-fleetlist-table {
-    width: auto;
-  }
-  .ie7 .sx-car-fleetlist .sx-fleetlist-row {
-    width: auto;
-    min-height: 1px;
-    background: transparent
-      url(/common/img/app/reservation/default/bg/bg-offerlist-col.png) repeat-x 0
-      100%;
-    position: relative;
-  }
-  .ie7 .sx-car-fleetlist .sx-fleetlist-img {
-    float: left;
-    width: 40%;
-    background: none;
-  }
-  .ie7 .sx-car-fleetlist .sx-fleetlist-data {
-    display: block;
-    float: right;
-    margin: 0 -3px 0 0;
-    padding-bottom: 56px;
-    position: static;
-    background: none;
-  }
-  .ie7 .sx-car-fleetlist .sx-fleetlist-col {
-    width: 30%;
-    position: absolute;
-    left: 40%;
-    bottom: 0;
-    padding: 0;
-    margin: 0;
-  }
-  .ie7 .sx-car-fleetlist .sx-fleetlist-button {
-    left: 70%;
-    bottom: 0;
-  }
-  .ie7 .sx-car-fleetlist .sx-fleetlist-col .sx-gc-button-cta {
-    padding: 12px 0 0 !important;
-    margin: 0;
-    height: 44px;
-    /* width: expression((this.parentNode.offsetWidth -2) + "px"); */
-  }
-  .ie7 .sx-car-fleetlist .sx-fleetlist-offerprice,
-  .ie7 .sx-car-fleetlist .sx-fleetlist-offerprice-cell,
-  .ie7 .sx-car-fleetlist .sx-fleetlist-offerprice-row {
-    display: inline-block;
-    height: auto;
-  }
-  .ie7 .sx-car-fleetlist .sx-fleetlist-offerprice-cell {
-    line-height: normal;
-    /* margin-bottom: expression((this.offsetHeight > 40) ? 0: "15px"); */
-  }
-  .ie7 .sx-car-fleetlist .sx-fleetlist-offerfeatures li,
-  .ie7 .sx-car-fleetlist .sx-fleetlist-offerprice-cell span,
-  .ie7 .sx-car-fleetlist .sx-fleetlist-offerprice-cell strong {
-    width: 49%;
-  }
-  .ie7
-    .sx-car-fleetlist
-    .sx-fleetlist-offerprice-cell
-    span.sx-fleetlist-offerprice-fullsize {
-    width: 90%;
-    white-space: normal;
-  }
-  .ie7 .sx-car-fleetlist .sx-fleetlist-call-wrapper {
-    display: block;
-    width: 100%;
-    height: 56px;
-    background: #079600;
-    border: none;
-  }
-  .ie7 .sx-car-fleetlist .sx-fleetlist-call-wrapper div {
-    display: block;
-    border-left: 2px solid #fff;
-    height: 100%;
-  }
-  .ie7 .sx-car-fleetlist .sx-fleetlist-call-wrapper p {
-    display: block;
-    padding: 3px;
-  }
-  .ie9 .sx-car-fleetlist .sx-fleetlist-item {
-    overflow: hidden;
-    border: 1px solid #666;
-    padding: 2px;
-    box-shadow: none;
-  }
-  
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&family=EB+Garamond:ital,wght@0,500;1,800&display=swap");
+
+body {
+  background: #dfc2f2;
+  background-image: linear-gradient(to right, #ffffb3, #ffe6e6);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#container {
+  box-shadow: 0 15px 30px 1px grey;
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 5em auto;
+  height: 350px;
+  width: 700px;
+}
+
+.product-details {
+  position: relative;
+  text-align: left;
+  overflow: hidden;
+  padding: 30px;
+  height: 100%;
+  float: left;
+  width: 40%;
+}
+
+#container .product-details h1 {
+  font-family: "Bebas Neue", cursive;
+  display: inline-block;
+  position: relative;
+  font-size: 30px;
+  color: #344055;
+  margin: 0;
+}
+
+#container .product-details h1:before {
+  position: absolute;
+  content: "";
+  right: 0%;
+  top: 0%;
+  transform: translate(25px, -15px);
+  font-family: "Bree Serif", serif;
+  display: inline-block;
+  background: #ffe6e6;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 5px;
+  color: white;
+  margin: 0;
+  animation: chan-sh 6s ease infinite;
+}
+
+.hint-star {
+  display: inline-block;
+  margin-left: 0.5em;
+  color: gold;
+  width: 50%;
+}
+
+#container .product-details > p {
+  font-family: "EB Garamond", serif;
+  text-align: center;
+  font-size: 18px;
+  color: #7d7d7d;
+}
+.control {
+  position: absolute;
+  bottom: 20%;
+  left: 22.8%;
+}
+.btn {
+  transform: translateY(0px);
+  transition: 0.3s linear;
+  background: #809fff;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: #eee;
+  padding: 0;
+  margin: 0;
+}
+
+.btn:hover {
+  transform: translateY(-6px);
+  background: #1a66ff;
+}
+
+.btn span {
+  font-family: "Farsan", cursive;
+  transition: transform 0.3s;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  margin: 0;
+}
+.btn .price,
+.shopping-cart {
+  background: #333;
+  border: 0;
+  margin: 0;
+}
+
+.btn .price {
+  transform: translateX(-10%);
+  padding-right: 15px;
+}
+
+.btn .shopping-cart {
+  transform: translateX(-100%);
+  position: absolute;
+  background: #333;
+  z-index: 1;
+  left: 0;
+  top: 0;
+}
+
+.btn .buy {
+  z-index: 3;
+  font-weight: bolder;
+}
+
+.btn:hover .price {
+  transform: translateX(-110%);
+}
+
+.btn:hover .shopping-cart {
+  transform: translateX(0%);
+}
+
+.product-image {
+  transition: all 0.3s ease-out;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  float: right;
+  width: 45%;
+  display: inline-block;
+}
+
+#container img {
+  width: 100%;
+  height: 100%;
+}
+
+.info {
+  background: rgba(27, 26, 26, 0.9);
+  font-family: "Bree Serif", serif;
+  transition: all 0.3s ease-out;
+  transform: translateX(-100%);
+  position: absolute;
+  line-height: 1.8;
+  text-align: left;
+  font-size: 105%;
+  cursor: no-drop;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.info h2 {
+  text-align: center;
+}
+.product-image:hover .info {
+  transform: translateX(0);
+}
+
+.info ul li {
+  transition: 0.3s ease;
+}
+.info ul li:hover {
+  transform: translateX(50px) scale(1.3);
+}
+
+.product-image:hover img {
+  transition: all 0.3s ease-out;
+}
+.product-image:hover img {
+  transform: scale(1.2, 1.2);
+}

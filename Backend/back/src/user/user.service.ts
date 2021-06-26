@@ -87,6 +87,9 @@ export class UserService {
       password: hash,
       phoneNumber: createUserDto.phoneNumber,
       type: createUserDto.type,
+      image: createUserDto.image,
+      adress: createUserDto.adress,
+      cin: createUserDto.cin,
     });
     return JSON.stringify({ msg: 'right' });
   }

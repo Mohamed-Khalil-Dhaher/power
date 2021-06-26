@@ -1,41 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
-import { Car } from '../car';
-import { CarService } from '../car.service';
+import { Car } from "../car";
+import { CarService } from "../car.service";
 
 @Component({
-  selector: 'app-list-cars',
-  templateUrl: './list-car.component.html',
-  styleUrls: ['./list-car.component.css']
+  selector: "app-list-cars",
+  templateUrl: "./list-car.component.html",
+  styleUrls: ["./list-car.component.css"]
 })
 export class ListCarComponent implements OnInit {
-
- cars:Car[]=[];
- name:string; 
-  constructor(private CarService : CarService) {}
+  cars: Car[] = [];
+  brand: string;
+  name: string;
+  constructor(private CarService: CarService) {}
 
   ngOnInit(): void {
-    this.getCars()
+    this.getCars();
   }
-   
-  getCars(){
-    this.CarService.getCars()
-    .subscribe((cars: Car[])=>{
-      this.cars=cars
+
+  getCars() {
+    this.CarService.getCars().subscribe((cars: Car[]) => {
+      this.cars = cars;
       // console.log(this.cars)
-    })
+    });
   }
 
-//   search (){
-//     if(this.name!==""){
-//      this.cars = this.cars.filter(res=>res.brand.toLocaleLowerCase().match(this.name.toLocaleLowerCase()))
-//       this.ngOnInit()
-//       console.log(this.name);
-      
-//     }else if (this.name==''){
-//       this.getCars()
-//     }
-// };
-
-  
+  Search() {
+    if (this.brand != "") {
+      this.cars = this.cars.filter((res) => {
+        return res.brand
+          .toLocaleLowerCase()
+          .match(this.brand.toLocaleLowerCase());
+      });
+    } else if (this.brand == "") {
+      this.ngOnInit();
+    }
+  }
 }

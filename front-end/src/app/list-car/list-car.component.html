@@ -1,6 +1,19 @@
-
-<div *ngFor="let car of cars" id="sx-fleetlist-wrapper-all">
-    <div id="sx-js-fleetlist-wrapper" style="display: block">
+<div>
+  <div id="wrap">
+    <form action="" autocomplete="on">
+      <input
+        id="search"
+        name="search"
+        type="text"
+        placeholder="What're we looking for ?"
+        [(ngModel)]="brand"
+        (input)="Search()"
+      /><input id="search_submit" value="Rechercher" type="submit" />
+    </form>
+  </div>
+  <br /><br />
+  <div *ngFor="let car of cars" id="sx-fleetlist-wrapper-all">
+    <!-- <div id="sx-js-fleetlist-wrapper" style="display: block">
       <ul id="sx-js-fleetlist" class="sx-car-fleetlist sx-js-car-fleetlist">
         <li
           class="sx-fleetlist-item sx-js-fleetlist-item"
@@ -39,7 +52,8 @@
                         >
                           <path
                             d="M8 16a.5.5 0 0 1-.5-.5v-1.293l-.646.647a.5.5 0 0 1-.707-.708L7.5 12.793v-1.086l-.646.647a.5.5 0 0 1-.707-.708L7.5 10.293V8.866l-1.236.713-.495 1.85a.5.5 0 1 1-.966-.26l.237-.882-.94.542-.496 1.85a.5.5 0 1 1-.966-.26l.237-.882-1.12.646a.5.5 0 0 1-.5-.866l1.12-.646-.884-.237a.5.5 0 1 1 .26-.966l1.848.495.94-.542-.882-.237a.5.5 0 1 1 .258-.966l1.85.495L7 8l-1.236-.713-1.849.495a.5.5 0 1 1-.258-.966l.883-.237-.94-.542-1.85.495a.5.5 0 0 1-.258-.966l.883-.237-1.12-.646a.5.5 0 1 1 .5-.866l1.12.646-.237-.883a.5.5 0 0 1 .966-.258l.495 1.849.94.542-.236-.883a.5.5 0 0 1 .966-.258l.495 1.849 1.236.713V5.707L6.147 4.354a.5.5 0 1 1 .707-.708l.646.647V3.207L6.147 1.854a.5.5 0 1 1 .707-.708l.646.647V.5a.5.5 0 0 1 1 0v1.293l.647-.647a.5.5 0 1 1 .707.708L8.5 3.207v1.086l.647-.647a.5.5 0 1 1 .707.708L8.5 5.707v1.427l1.236-.713.495-1.85a.5.5 0 1 1 .966.26l-.236.882.94-.542.495-1.85a.5.5 0 1 1 .966.26l-.236.882 1.12-.646a.5.5 0 0 1 .5.866l-1.12.646.883.237a.5.5 0 1 1-.26.966l-1.848-.495-.94.542.883.237a.5.5 0 1 1-.26.966l-1.848-.495L9 8l1.236.713 1.849-.495a.5.5 0 0 1 .259.966l-.883.237.94.542 1.849-.495a.5.5 0 0 1 .259.966l-.883.237 1.12.646a.5.5 0 0 1-.5.866l-1.12-.646.236.883a.5.5 0 1 1-.966.258l-.495-1.849-.94-.542.236.883a.5.5 0 0 1-.966.258L9.736 9.58 8.5 8.866v1.427l1.354 1.353a.5.5 0 0 1-.707.708l-.647-.647v1.086l1.354 1.353a.5.5 0 0 1-.707.708l-.647-.647V15.5a.5.5 0 0 1-.5.5z"
-                          /></svg>Air conditioning
+                          /></svg
+                        >Air conditioning
                       </li>
                       <li class="sx-equipment-seats" title="Seats">
                         <strong><span>Seats</span></strong
@@ -58,7 +72,9 @@
                             fill-rule="evenodd"
                             d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"
                           />
-                          <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+                          <path
+                            d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"
+                          />
                         </svg>
                         {{ car.seats }} Seats
                       </li>
@@ -66,10 +82,21 @@
                         class="sx-equipment-transmission"
                         title="Manual transmission"
                       >
-                        <strong><span>Manual transmission</span></strong
-                        > <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-graph-up" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5z"/>
-                        </svg> Automatic
+                        <strong><span>Manual transmission</span></strong>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-graph-up"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M0 0h1v15h15v1H0V0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5z"
+                          />
+                        </svg>
+                        Automatic
                       </li>
                       <li class="sx-equipment-doors-4" title="Doors">
                         <strong><span>Doors</span></strong
@@ -122,7 +149,8 @@
                         >{{ car.bags }} Bags
                       </li>
                       <li class="sx-res-minage-info" title="Minimum age">
-                        <strong><span>Minimum age</span></strong ><svg
+                        <strong><span>Minimum age</span></strong
+                        ><svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="16"
                           height="16"
@@ -151,13 +179,13 @@
                 </a>
               </div>
             </div>
-  
+
             <div class="sx-fleetlist-row">
               <hr />
               <div class="sx-fleetlist-row-bottom wrap">
                 <div class="sx-fleetlist-button">
                   <button
-                    routerLink="/reservation/{{car.id}}"
+                    routerLink="/reservation/{{ car.id }}"
                     id="button"
                     type="button"
                     class="btn btn-default btn-tooltip"
@@ -166,7 +194,7 @@
                     Reserve now
                   </button>
                   <button
-                    routerLink="/{{car.id}}"
+                    routerLink="/{{ car.id }}"
                     id="button"
                     type="button"
                     class="btn btn-default btn-tooltip"
@@ -181,6 +209,52 @@
           </div>
         </li>
       </ul>
+    </div> -->
+    <div id="container">
+      <div class="product-details">
+        <h1>CHRISTMAS TREE</h1>
+        <span class="hint-star star">
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star-o" aria-hidden="true"></i>
+        </span>
+
+        <p class="information">
+          " Let's spread the joy , here is Christmas , the most awaited day of
+          the year.Christmas Tree is what one need the most. Here is the correct
+          tree which will enhance your Christmas.
+        </p>
+
+        <div class="control">
+          <button class="btn">
+            <span class="price">$250</span>
+            <span class="shopping-cart"
+              ><i class="fa fa-shopping-cart" aria-hidden="true"></i
+            ></span>
+            <span class="buy">Get now</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="product-image">
+        <img
+          src={{car.file1
+          }}
+          alt=""
+        />
+
+        <div class="info">
+          <h2>Description</h2>
+          <ul>
+            <li><strong>Height : </strong>5 Ft</li>
+            <li><strong>Shade : </strong>Olive green</li>
+            <li><strong>Decoration: </strong>balls and bells</li>
+            <li><strong>Material: </strong>Eco-Friendly</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
-  
+</div>

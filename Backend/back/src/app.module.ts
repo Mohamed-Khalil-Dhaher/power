@@ -11,6 +11,7 @@ import { ReservationModule } from './reservation/reservation.module';
 import { Reservation } from './reservation/entities/reservation.entity';
 
 import { RatingModule } from './rating/rating.module';
+import { MessageModule } from './message/message.module';
 @Module({
   imports: [
     UserModule,
@@ -18,16 +19,17 @@ import { RatingModule } from './rating/rating.module';
       type: 'mysql',
       host: 'localhost',
       port: 3306,
-      username: 'root',
-      password: 'root',
-      database: 'power',
-      entities: [User,Car , Reservation],
+      username: 'student',
+      password: 'student',
+      database: 'khalil',
+      entities: [User, Car, Reservation],
       synchronize: true,
     }),
     AuthModule,
     CarModule,
     ReservationModule,
     RatingModule,
+    MessageModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -8,12 +8,14 @@ import {
   Delete,
   Request,
   UseGuards,
+  UploadedFile,
+  UseInterceptors,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { AuthGuard } from '@nestjs/passport';
-
+import { FileInterceptor } from '@nestjs/platform-express';
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
@@ -24,6 +26,7 @@ export class UserController {
   // }
 
   @Post('/auth/signup')
+  @UseInterceptors(FileInterceptor('file'))
   signup(@Body() createUserDto: CreateUserDto) {
     return this.userService.signup(createUserDto);
   }
